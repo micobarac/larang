@@ -1,0 +1,42 @@
+<div class="mt-4 col-8 offset-2">
+  <div class="card">
+    <div class="card-header">Signup Here</div>
+    <div class="card-body">
+      <form #signupForm=ngForm (ngSubmit)=onSubmit()>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Name</label>
+          <div class="col-sm-10">
+            <input type="name" name="name" [(ngModel)]="form.name" class="form-control" placeholder="Name" required>
+            <div class="alert alert-danger" *ngIf="errors.name">{{ errors.name }}</div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-10">
+            <input type="email" name="email" [(ngModel)]="form.email" class="form-control" placeholder="Email" required>
+            <div class="alert alert-danger" *ngIf="errors.email">{{ errors.email }}</div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Password</label>
+          <div class="col-sm-10">
+            <input type="password" name="password" [(ngModel)]="form.password" class="form-control" placeholder="Password" required>
+            <div class="alert alert-danger" *ngIf="errors.password">{{ errors.password }}</div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Confirm Password</label>
+          <div class="col-sm-10">
+            <input type="password" name="password_confirmation" [(ngModel)]="form.password_confirmation" class="form-control" placeholder="Confirm Password" required>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-10 offset-2">
+            <button type="submit" class="btn btn-primary" [disabled]="!signupForm.valid">Sign up</button>
+            <a routerLink="/login" class="btn btn-info float-right">Log in</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

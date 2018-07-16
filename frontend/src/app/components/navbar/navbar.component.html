@@ -1,0 +1,8 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <div>
+    <a class="navbar-brand" routerLink="login" *ngIf="!(isLoggedIn | async)">Login</a>
+    <a class="navbar-brand" routerLink="logout" *ngIf="isLoggedIn | async">Logout</a>
+    <a class="navbar-brand" routerLink="profile" *ngIf="isLoggedIn | async">Profile</a>
+  </div>
+</nav>
