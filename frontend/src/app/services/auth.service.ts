@@ -29,7 +29,7 @@ export class AuthService {
 
   login(user: User): Observable<EntityResponseType> {
     const copy = HttpResponseUtil.convert(user);
-    return this.http.post<User>(`${this.Api}/login`, copy, { observe: 'response' })
+    return this.http.post<UserAccount>(`${this.Api}/login`, copy, { observe: 'response' })
     .pipe(
       map((res: EntityResponseType) => HttpResponseUtil.convertResponse(res))
     );
@@ -37,7 +37,7 @@ export class AuthService {
 
   signup(user: User): Observable<EntityResponseType> {
     const copy = HttpResponseUtil.convert(user);
-    return this.http.post<User>(`${this.Api}/signup`, copy, { observe: 'response' })
+    return this.http.post<UserAccount>(`${this.Api}/signup`, copy, { observe: 'response' })
     .pipe(
       map((res: EntityResponseType) => HttpResponseUtil.convertResponse(res))
     );
@@ -45,7 +45,7 @@ export class AuthService {
 
   reset(user: User): Observable<EntityResponseType> {
     const copy = HttpResponseUtil.convert(user);
-    return this.http.post<User>(`${this.Api}/reset`, copy, { observe: 'response' })
+    return this.http.post<UserAccount>(`${this.Api}/reset`, copy, { observe: 'response' })
     .pipe(
       map((res: EntityResponseType) => HttpResponseUtil.convertResponse(res))
     );
